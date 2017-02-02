@@ -12,7 +12,7 @@ Public Class FrmMain
 
         InitializeComponent()
         LvSet()
-
+        Me.Width = LV.Columns(0).Width + LV.Columns(1).Width + LV.Columns(2).Width + 50
     End Sub
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GetStartup()
@@ -38,7 +38,7 @@ Public Class FrmMain
         LV.View = View.Details
         LV.FullRowSelect = True
         LV.MultiSelect = False
-        LV.Columns.Add("Cpation", 100)
+        LV.Columns.Add("Cpation", 200)
         LV.Columns.Add("Image Path", 500)
         LV.Columns.Add("Signed", 100)
     End Sub
