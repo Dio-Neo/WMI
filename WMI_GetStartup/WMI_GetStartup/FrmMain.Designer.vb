@@ -23,28 +23,53 @@ Partial Class FrmMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.LV = New System.Windows.Forms.ListView()
+        Me.MenuStrip = New System.Windows.Forms.MenuStrip()
+        Me.RefreshToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'LV
         '
         Me.LV.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LV.Location = New System.Drawing.Point(0, 0)
+        Me.LV.Location = New System.Drawing.Point(0, 24)
         Me.LV.Name = "LV"
-        Me.LV.Size = New System.Drawing.Size(461, 435)
+        Me.LV.Size = New System.Drawing.Size(1023, 452)
         Me.LV.TabIndex = 0
         Me.LV.UseCompatibleStateImageBehavior = False
+        '
+        'MenuStrip
+        '
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RefreshToolStripMenuItem})
+        Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip.Name = "MenuStrip"
+        Me.MenuStrip.Size = New System.Drawing.Size(1023, 24)
+        Me.MenuStrip.TabIndex = 1
+        Me.MenuStrip.Text = "MenuStrip1"
+        '
+        'RefreshToolStripMenuItem
+        '
+        Me.RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem"
+        Me.RefreshToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
+        Me.RefreshToolStripMenuItem.Text = "Refresh"
         '
         'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(461, 435)
+        Me.ClientSize = New System.Drawing.Size(1023, 476)
         Me.Controls.Add(Me.LV)
+        Me.Controls.Add(Me.MenuStrip)
+        Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "FrmMain"
         Me.Text = "GetWmi"
+        Me.MenuStrip.ResumeLayout(False)
+        Me.MenuStrip.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents LV As ListView
+    Friend WithEvents MenuStrip As MenuStrip
+    Friend WithEvents RefreshToolStripMenuItem As ToolStripMenuItem
 End Class
