@@ -12,10 +12,15 @@ Public Class FrmMain
 
         InitializeComponent()
         LvSet()
-        Me.Width = LV.Columns(0).Width + LV.Columns(1).Width + LV.Columns(2).Width + 50
+        Width = LV.Columns(0).Width + LV.Columns(1).Width + LV.Columns(2).Width + 50
     End Sub
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim WaitForm As Form = FrmWait
+        WaitForm.Show()
+        Application.DoEvents()
         GetStartup()
+        Application.DoEvents()
+        WaitForm.Close()
     End Sub
     Private Sub RefreshToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RefreshToolStripMenuItem.Click
         GetStartup()

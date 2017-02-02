@@ -61,6 +61,7 @@ Partial Class FrmMain
         Me.Controls.Add(Me.MenuStrip)
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "FrmMain"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Get Startup"
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
