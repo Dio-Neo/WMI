@@ -74,11 +74,11 @@ Public Class FrmMain
     End Function
 
     Private Function GetShortcutPath(Command As String)
-        Dim pathOnly As String = Path.GetDirectoryName(Command)
-        Dim fileNameOnly As String = Path.GetFileName(Command)
-        Dim shell As New Shell()
-        Dim folder As Folder = shell.NameSpace(pathOnly)
-        Dim folderItem As FolderItem = folder.ParseName(fileNameOnly)
+        Dim directoryPath As String = Path.GetDirectoryName(Command)
+        Dim fileName As String = Path.GetFileName(Command)
+        Dim s As New Shell()
+        Dim folder As Folder = s.NameSpace(directoryPath)
+        Dim folderItem As FolderItem = folder.ParseName(fileName)
         If (folderItem IsNot Nothing) Then
             Dim link As ShellLinkObject = DirectCast(folderItem.GetLink, ShellLinkObject)
             Return link.Path
